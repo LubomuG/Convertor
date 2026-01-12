@@ -667,7 +667,7 @@ $(document).ready(function() {
     
     console.log('Конвертер валют завантажено успішно!');
     console.log('Версія: 1.0.0');
-    console.log('Автор: Учень');
+    console.log('Автор: Любомир');
     console.log('Дата: ' + getCurrentDate());
     
 });
