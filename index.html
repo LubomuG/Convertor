@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💱 Конвертер валют</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-coins"></i>
+                <h1>Конвертер валют</h1>
+            </div>
+            <div class="theme-switcher">
+                <button id="themeToggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                    <span>Темна тема</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="converter-card animate__animated animate__fadeIn">
+                <div class="card-header">
+                    <h2><i class="fas fa-exchange-alt"></i> Конвертація валюти</h2>
+                    <p class="subtitle">Актуальні курси валют у реальному часі</p>
+                </div>
+
+                <div class="converter-body">
+                    <div class="currency-block">
+                        <div class="currency-header">
+                            <h3><i class="fas fa-arrow-down"></i> Віддаю</h3>
+                            <div class="currency-select-wrapper">
+                                <select id="currencyFrom" class="currency-select">
+                                    <option value="">Завантаження...</option>
+                                </select>
+                                <i class="fas fa-chevron-down select-icon"></i>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-with-arrows">
+                                <input type="number" id="amount1" class="currency-input" placeholder="0.00" step="0.1" min="0">
+                                <div class="number-controls">
+                                    <button class="number-btn up" data-target="amount1" data-change="0.1">
+                                        ▲
+                                    </button>
+                                    <button class="number-btn down" data-target="amount1" data-change="-0.1">
+                                        ▼
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="clear-btn" data-target="amount1">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="controls">
+                        <button id="swapBtn" class="swap-btn" title="Поміняти валюти місцями">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                        <button id="convertBtn" class="convert-main-btn">
+                            <i class="fas fa-calculator"></i>
+                            Конвертувати
+                        </button>
+                    </div>
+
+                    <div class="currency-block">
+                        <div class="currency-header">
+                            <h3><i class="fas fa-arrow-up"></i> Отримую</h3>
+                            <div class="currency-select-wrapper">
+                                <select id="currencyTo" class="currency-select">
+                                    <option value="">Завантаження...</option>
+                                </select>
+                                <i class="fas fa-chevron-down select-icon"></i>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-with-arrows">
+                                <input type="number" id="amount2" class="currency-input" placeholder="0.00" step="0.1" min="0" readonly>
+                                <div class="number-controls">
+                                    <button class="number-btn up" data-target="amount2" data-change="0.1">
+                                        ▲
+                                    </button>
+                                    <button class="number-btn down" data-target="amount2" data-change="-0.1">
+                                        ▼
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="clear-btn" data-target="amount2">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <div class="quick-actions">
+                        <button class="action-btn" data-multiplier="0.1">
+                            <i class="fas fa-plus"></i> +0.1
+                        </button>
+                        <button class="action-btn" data-multiplier="1">
+                            <i class="fas fa-plus"></i> +1
+                        </button>
+                        <button class="action-btn" data-multiplier="10">
+                            <i class="fas fa-plus"></i> +10
+                        </button>
+                        <button class="action-btn" data-multiplier="100">
+                            <i class="fas fa-plus"></i> +100
+                        </button>
+                        <button id="reverseBtn" class="action-btn">
+                            <i class="fas fa-retweet"></i> Реверс
+                        </button>
+                        <button class="action-btn" id="clearAllBtn">
+                            <i class="fas fa-trash"></i> Очистити
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
