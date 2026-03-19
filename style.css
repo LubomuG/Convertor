@@ -375,6 +375,16 @@ body {
     border-color: var(--accent);
     transform: translateY(-2px);
 }
+#clearAllBtn {
+    background: var(--danger);
+    border-color: var(--danger);
+    color: white;
+}
+
+#clearAllBtn:hover {
+    filter: brightness(0.9);
+    transform: translateY(-2px);
+}
 
 .footer {
     margin-top: auto;
@@ -472,3 +482,4 @@ body {
         font-size: 0.8rem;
     }
 }
+
